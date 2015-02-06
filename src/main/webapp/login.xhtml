@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+	<title>Login</title>
+
+	<h:outputStylesheet library="css" name="estilo.css" />
+</h:head>
+<h:body>
+	<header>
+		<h:graphicImage library="images" name="logo_3d.png" />
+	</header>
+
+
+	<h:form>
+		<p:messages autoUpdate="true"/>
+	
+		
+		<h:panelGrid columns="2" cellpadding="5">
+            <h:outputLabel for="username" value="Username:" />
+            <p:inputText id="username" value="#{loginBean.usuario}" required="true" label="username" />
+ 
+            <h:outputLabel for="password" value="Password:" />
+            <p:password id="password" value="#{loginBean.senha}" required="true" label="password" />
+ 
+            <f:facet name="footer">
+                <p:commandButton value="Login" action="#{loginBean.logar}"/>
+            </f:facet>  
+        </h:panelGrid>
+	</h:form>
+
+
+	<footer> 3D System - Java Web</footer>
+
+</h:body>
+</html>
